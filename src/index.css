@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --background: hsl(0, 0%, 98%);
+  --text-primary: hsl(236, 9%, 61%);
+  --text-secondary: hsl(235, 19%, 35%);
+  --background-image: url(images/bg-desktop-light.jpg);
+  --logo-image: url(images/icon-sun.svg);
+}
+
+[data-theme='dark'] {
+  --background: hsl(235, 21%, 11%);
+  --text-primary: hsl(234, 11%, 52%);
+  --text-secondary: hsl(236, 33%, 92%);
+  --background-image: url(images/bg-desktop-dark.jpg);
+  --logo-image: url(images/icon-moon.svg);
 }
