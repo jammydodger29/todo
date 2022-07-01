@@ -5,6 +5,8 @@ import useLocalStorage from "use-local-storage";
 import _ from "lodash";
 import { v4 } from "uuid";
 
+// import Check from "./images/icon-check.svg";
+
 const item = {
   id: v4(),
   name: "Clean the house",
@@ -83,6 +85,8 @@ function App() {
     }
   };
 
+  const count = state.todo.items.length;
+
   return (
     <div className="App" data-theme={theme}>
       <div className="main-image-container">
@@ -139,7 +143,32 @@ function App() {
                                       {...provided.draggableProps}
                                       {...provided.dragHandleProps}
                                     >
-                                      {el.name}
+                                      <div
+                                        // key={index}
+                                        className="circle"
+                                        // onClick={(index) =>
+                                        //   setChecked(!checked)
+                                        // }
+                                        // style={
+                                        //   checked
+                                        //     ? {
+                                        //         backgroundColor:
+                                        //           "hsl(220, 98%, 61%)",
+                                        //       }
+                                        //     : { backgroundColor: "transparent" }
+                                        // }
+                                      >
+                                        {/* {checked && (
+                                          <img
+                                            className="checkmark"
+                                            src={Check}
+                                            alt="icon"
+                                          /> */}
+                                        {/* )} */}
+                                      </div>
+                                      <div className="text-item-container">
+                                        {el.name}
+                                      </div>
                                     </div>
                                   );
                                 }}
@@ -155,6 +184,28 @@ function App() {
               );
             })}
           </DragDropContext>
+        </div>
+        <div className="filter-container">
+          <div className="filter">
+            <p className="filter-heading" id="remaining">
+              {count} items remaining
+            </p>
+            <button className="filter-heading" id="all">
+              All
+            </button>
+            <button className="filter-heading" id="active">
+              Active
+            </button>
+            <button className="filter-heading" id="completed">
+              Completed
+            </button>
+            <button className="filter-heading" id="clear">
+              Clear Completed
+            </button>
+          </div>
+        </div>
+        <div className="help-text">
+          <p>Drag and drop to reorder list</p>
         </div>
       </div>
     </div>
